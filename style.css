@@ -16,37 +16,42 @@ button {
 .title {
   font-size: 26px;
   font-weight: 500;
-  margin: 10px 0;
+  padding: 10px 0;
 }
 .subTitle {
   font-size: 24px;
   font-weight: 400;
-  margin: 10px 0;
+  padding: 10px 0;
 }
 svg {
   width: 30px;
 }
 
-/* Template | Container */
+/*------------------------------ 
+      Template | Container 
+------------------------------*/
 .container {
-  border: 1px solid;
+  min-height: 100vh;
   width: 900px;
-  max-width: 90vw;
+  max-width: 100%;
+  padding: 0 10px;
   margin: auto;
+  transition: 0.5s;
 }
 nav {
-  background-color: red;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 0;
 }
 .cartIcon {
-  border: 1px solid;
   position: relative;
+  cursor: pointer;
+  border-radius: 50%;
 }
 .cartIcon span {
-  background-color: white;
+  background-color: #f40404;
+  color: #fdfdfd;
   position: absolute;
   height: 20px;
   width: 20px;
@@ -56,4 +61,51 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/*------------------------------ 
+    Template | Shopping Cart 
+------------------------------*/
+.cartContent {
+  background-color: #28282b;
+  width: 400px;
+  max-width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+.cartContent .subTitle {
+  color: #fdfdfd;
+  padding: 10px;
+}
+.cartProducts {
+  padding: 10px;
+  overflow: auto;
+}
+.cartProducts::-webkit-scrollbar {
+  width: 0;
+}
+.cartBtns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.cartBtns button {
+  background-color: #ffdb58;
+  padding: 16px;
+}
+.cartBtns button.cartClose {
+  background-color: #f3f3f3;
+}
+.cartContent {
+  right: -400px;
+  transition: 0.5s;
+}
+body.activeCart .cartContent {
+  right: 0;
+}
+body.activeCart .container {
+  transform: translateX(-200px);
 }

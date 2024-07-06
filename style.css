@@ -1,0 +1,59 @@
+/* Common Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
+  text-decoration: none;
+  color: #28282b;
+}
+button {
+  cursor: pointer;
+  border: none;
+  padding: 10px;
+  font-weight: 600;
+}
+.title {
+  font-size: 26px;
+  font-weight: 500;
+  margin: 10px 0;
+}
+.subTitle {
+  font-size: 24px;
+  font-weight: 400;
+  margin: 10px 0;
+}
+svg {
+  width: 30px;
+}
+
+/* Template | Container */
+.container {
+  border: 1px solid;
+  width: 900px;
+  max-width: 90vw;
+  margin: auto;
+}
+nav {
+  background-color: red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+.cartIcon {
+  border: 1px solid;
+  position: relative;
+}
+.cartIcon span {
+  background-color: white;
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  top: 50%;
+  left: -5px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

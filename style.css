@@ -35,11 +35,12 @@ svg {
   grid-template-columns: repeat(12, 1fr);
   transition: 0.5s;
 }
-.container .wraper {
+.navWraper {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-column: 1 / -1;
   background-color: #f3ecec;
+  border: 1px solid;
 }
 nav {
   grid-column: 1 / -1;
@@ -69,10 +70,17 @@ nav .title {
   align-items: center;
   justify-content: center;
 }
-.mainContent {
+.mainWraper {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-column: 1 / -1;
+  background-color: #f87373;
+  border: 1px solid;
+}
+.mainWraper section {
+  grid-column: 1 / -1;
+  padding: 10px;
+  min-height: calc(100vh - 61px);
 }
 /*------------------------------ 
     Template | Shopping Cart 
@@ -114,9 +122,6 @@ nav .title {
 body.activeCart .cartContent {
   right: 0;
 }
-body.activeCart .container {
-  transform: translateX(-200px);
-}
 
 /* Responsivenses */
 @media (min-width: 481px) {
@@ -130,11 +135,10 @@ body.activeCart .container {
     width: 400px;
     right: -400px;
   }
-  .container .wraper nav {
+  nav {
     grid-column: 2 / -2;
   }
-  .mainContent section {
+  .mainWraper section {
     grid-column: 2 / -2;
-    padding: 10px;
   }
 }

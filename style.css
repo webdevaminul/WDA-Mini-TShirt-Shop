@@ -1,4 +1,6 @@
-/* Common Styles */
+/*------------------------------ 
+        Common Styles 
+------------------------------*/
 * {
   margin: 0;
   padding: 0;
@@ -82,6 +84,7 @@ nav .title {
   padding: 10px;
   min-height: calc(100vh - 61px);
 }
+
 /*------------------------------ 
     Template | Shopping Cart 
 ------------------------------*/
@@ -123,7 +126,21 @@ body.activeCart .cartContent {
   right: 0;
 }
 
-/* Responsivenses */
+/*------------------------------ 
+    Index | Products Container 
+------------------------------*/
+.productsContainer {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.product img {
+  width: 100px;
+}
+/*------------------------------ 
+        Rseponsiveness 
+------------------------------*/
 @media (min-width: 481px) {
   .cartContent {
     width: 360px;

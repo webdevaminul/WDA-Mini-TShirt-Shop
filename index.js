@@ -29,7 +29,7 @@ const initApp = () => {
     productElement.innerHTML = `
       <img src="${product.image}"/>
       <h2>${product.name}</h2>
-      <p>${product.price}</p>
+      <p>$${product.price}</p>
       <button>Add to Cart</button>
       `;
     productsContainer.appendChild(productElement);

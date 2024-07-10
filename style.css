@@ -41,8 +41,10 @@ svg {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-column: 1 / -1;
-  background-color: #f3ecec;
-  border: 1px solid;
+  background-color: #fafaf1;
+  padding: 10px 0;
+  border: 1px solid #efefef;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
 }
 nav {
   grid-column: 1 / -1;
@@ -76,13 +78,12 @@ nav .title {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-column: 1 / -1;
-  background-color: #f87373;
-  border: 1px solid;
+  padding-top: 20px;
 }
 .mainWraper section {
   grid-column: 1 / -1;
   padding: 10px;
-  min-height: calc(100vh - 61px);
+  /* min-height: calc(100vh - 61px); */
 }
 
 /*------------------------------ 
@@ -118,9 +119,10 @@ nav .title {
 .cartBtns button {
   background-color: #ffdb58;
   padding: 16px;
+  font-size: 16px;
 }
 .cartBtns button.cartClose {
-  background-color: #f3f3f3;
+  background-color: #ff6c6c;
 }
 body.activeCart .cartContent {
   right: 0;
@@ -130,13 +132,43 @@ body.activeCart .cartContent {
     Index | Products Container 
 ------------------------------*/
 .productsContainer {
+  width: 100%;
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(12, 1fr);
   gap: 20px;
 }
+.product {
+  padding: 10px;
+  grid-column: span 6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fafaf1;
+  border-radius: 10px;
+  border: 1px solid #efefef;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
 .product img {
-  width: 100px;
+  width: 100%;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.4));
+}
+.product h2 {
+  flex-grow: 1;
+  text-align: center;
+  font-weight: 500;
+  font-size: 18px;
+}
+.product p {
+  text-align: center;
+  letter-spacing: 3px;
+  padding: 5px 0;
+}
+.product button {
+  background-color: #28282b;
+  color: #fdfdfd;
+  padding: 5px 10px;
+  border-radius: 20px;
 }
 /*------------------------------ 
         Rseponsiveness 
@@ -145,6 +177,14 @@ body.activeCart .cartContent {
   .cartContent {
     width: 360px;
     right: -360px;
+  }
+}
+@media (min-width: 600px) {
+  .productsContainer {
+    gap: 30px;
+  }
+  .product {
+    grid-column: span 4;
   }
 }
 @media (min-width: 769px) {
@@ -157,5 +197,13 @@ body.activeCart .cartContent {
   }
   .mainWraper section {
     grid-column: 2 / -2;
+  }
+  .product h2 {
+    font-size: 20px;
+  }
+}
+@media (min-width: 1025px) {
+  .product {
+    grid-column: span 3;
   }
 }

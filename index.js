@@ -11,7 +11,12 @@ const loadTemplate = () => {
       app.innerHTML = value; //Load the entire template to index.html
       const mainContent = document.getElementById("mainContent"); //Load index.html main to template.html main
       mainContent.innerHTML = temporatyContent.innerHTML;
+      temporatyContent.innerHTML = null; //Delete temporary content to stop 2 content
       cart();
     });
 };
 loadTemplate();
+
+const initApp = () => {
+  //Load Product List
+};

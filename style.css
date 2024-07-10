@@ -2,18 +2,19 @@
         Common Styles 
 ------------------------------*/
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
+  user-select: none;
   font-family: Poppins, sans-serif;
   text-decoration: none;
   color: #28282b;
+  margin: 0;
+  padding: 0;
 }
 button {
   cursor: pointer;
   border: none;
-  padding: 10px;
   font-weight: 600;
+  padding: 10px;
 }
 .title {
   font-size: 26px;
@@ -41,10 +42,10 @@ svg {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-column: 1 / -1;
-  background-color: #fafaf1;
-  padding: 10px 0;
-  border: 1px solid #efefef;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fafaf1;
+  border: 1px solid #efefef;
+  padding: 10px 0;
 }
 nav {
   grid-column: 1 / -1;
@@ -57,22 +58,22 @@ nav .title {
   padding: 0;
 }
 .cartIcon {
-  position: relative;
   cursor: pointer;
+  position: relative;
   border-radius: 50%;
 }
 .cartIcon span {
-  background-color: #f40404;
-  color: #fdfdfd;
-  position: absolute;
-  height: 20px;
-  width: 20px;
-  top: 50%;
-  left: -5px;
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  background-color: #f40404;
+  color: #fdfdfd;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  top: 50%;
+  left: -5px;
 }
 .mainWraper {
   display: grid;
@@ -83,31 +84,30 @@ nav .title {
 .mainWraper section {
   grid-column: 1 / -1;
   padding: 10px;
-  /* min-height: calc(100vh - 61px); */
 }
 
 /*------------------------------ 
     Template | Shopping Cart 
 ------------------------------*/
 .cartContent {
-  background-color: #28282b;
-  width: 480px;
-  max-width: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
   position: fixed;
+  background-color: #28282b;
+  max-width: 100%;
+  width: 480px;
   top: 0;
   bottom: 0;
   right: -480px;
   transition: 0.5s;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
 }
 .cartContent .subTitle {
   color: #fdfdfd;
   padding: 10px;
 }
 .cartProducts {
-  padding: 10px;
   overflow: auto;
+  padding: 10px;
 }
 .cartProducts::-webkit-scrollbar {
   width: 0;
@@ -118,8 +118,8 @@ nav .title {
 }
 .cartBtns button {
   background-color: #ffdb58;
-  padding: 16px;
   font-size: 16px;
+  padding: 16px;
 }
 .cartBtns button.cartClose {
   background-color: #ff6c6c;
@@ -132,32 +132,32 @@ body.activeCart .cartContent {
     Index | Products Container 
 ------------------------------*/
 .productsContainer {
-  width: 100%;
-  grid-column: 1 / -1;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+  grid-column: 1 / -1;
   gap: 20px;
+  width: 100%;
 }
 .product {
-  padding: 10px;
   grid-column: span 6;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #fafaf1;
-  border-radius: 10px;
-  border: 1px solid #efefef;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fafaf1;
+  border: 1px solid #efefef;
+  border-radius: 10px;
+  padding: 10px;
 }
 .product img {
-  width: 100%;
   filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.4));
+  width: 100%;
 }
 .product h2 {
-  flex-grow: 1;
   text-align: center;
-  font-weight: 500;
+  flex-grow: 1;
   font-size: 18px;
+  font-weight: 500;
 }
 .product p {
   text-align: center;
@@ -167,8 +167,9 @@ body.activeCart .cartContent {
 .product button {
   background-color: #28282b;
   color: #fdfdfd;
-  padding: 5px 10px;
   border-radius: 20px;
+  padding: 5px 10px;
+  margin-bottom: 20px;
 }
 /*------------------------------ 
         Rseponsiveness 

@@ -24,7 +24,7 @@ const initApp = () => {
   const productsContainer = document.querySelector(".productsContainer");
   productsContainer.innerHTML = null; //Products Container null before setting products
   products.forEach((product) => {
-    const productElement = document.createElement("div");
+    const productElement = document.createElement("div"); //Create product element
     productElement.classList.add("product");
     productElement.innerHTML = `
       <img src="${product.image}"/>
@@ -32,7 +32,6 @@ const initApp = () => {
       <p>$${product.price}</p>
       <button>Add to Cart</button>
       `;
-    productsContainer.appendChild(productElement);
+    productsContainer.appendChild(productElement); //insert product element to productsContainer
   });
-  console.log(productsContainer);
 };

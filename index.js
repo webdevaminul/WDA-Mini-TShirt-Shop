@@ -30,8 +30,9 @@ const initApp = () => {
       <img src="${product.image}"/>
       <h2>${product.name}</h2>
       <p>$${product.price}</p>
-      <button>Add to Cart</button>
+      <button class="addCart" data-id="${product.id}">Add to Cart</button>
       `;
     productsContainer.appendChild(productElement); //insert product element to productsContainer
+    console.log(productElement);
   });
 };

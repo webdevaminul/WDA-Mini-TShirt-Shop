@@ -105,13 +105,57 @@ nav .title {
   color: #fdfdfd;
   padding: 10px;
 }
-.cartProducts {
+.cartContainer {
   overflow: auto;
   padding: 10px;
 }
-.cartProducts::-webkit-scrollbar {
+.cartContainer::-webkit-scrollbar {
   width: 0;
 }
+.cartProduct img {
+  width: 100%;
+}
+.cartProduct {
+  display: grid;
+  grid-template-columns: 60px 1fr 50px 80px;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+.cartItemName {
+  text-align: left;
+}
+.cartProduct p {
+  color: #fdfdfd;
+}
+.cartProduct .totalPrice {
+  text-wrap: nowrap;
+  color: #fdfdfd;
+}
+.cartProduct div {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.cartProduct div span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  background-color: #eee;
+  color: #2f2f2f;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.listCart .item .quantity span:nth-child(2) {
+  background-color: transparent;
+  color: #fff;
+}
+.cartProduct:nth-child(even) {
+  background-color: #eee1;
+}
+
 .cartBtns {
   display: grid;
   grid-template-columns: 1fr 1fr;

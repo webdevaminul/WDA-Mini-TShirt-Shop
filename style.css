@@ -39,6 +39,11 @@ svg {
   transition: 0.5s;
 }
 .navWraper {
+  position: fixed;
+  left: 0;
+  right: 0;
+  background-color: #fdfdfd;
+  z-index: 10;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-column: 1 / -1;
@@ -79,7 +84,7 @@ nav .title {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-column: 1 / -1;
-  padding-top: 20px;
+  padding-top: 80px;
 }
 .mainWraper section {
   grid-column: 1 / -1;
@@ -99,6 +104,7 @@ nav .title {
   top: 0;
   bottom: 0;
   right: -480px;
+  z-index: 12;
   transition: 0.5s;
 }
 .cartContent .subTitle {

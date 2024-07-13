@@ -74,7 +74,7 @@ const cart = () => {
       cartPorduct.innerHTML = `
       <img src="${info.image}"/>
       <p class="cartItemName">${info.name}</p>
-      <p class="totalPrice">${parseFloat(info.price * item.quantity).toFixed(2)}</p>
+      <p class="totalPrice">$${parseFloat(info.price * item.quantity).toFixed(2)}</p>
       <div>
         <span class="minus" data-id=${info.id}>-</span>
         <span>${item.quantity}</span>

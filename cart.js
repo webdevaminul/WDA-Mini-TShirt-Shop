@@ -31,6 +31,8 @@ const cart = () => {
       // Product quantity is 0, remove from cart
       cartItems.splice(productIndex, 1);
     }
+    // Store updated cart items in local storage
+    localStorage.setItem("cart", JSON.stringify(cartItems));
     refreshCartDisplay();
   };
 
@@ -83,5 +85,14 @@ const cart = () => {
     });
     HTMLforTotal.innerText = totalQuantity;
   };
+
+  //Load cart items from local storage
+  const initCartItem = () => {
+    if (localStorage.getItem("cart")) {
+      cartItems = JSON.parse(localStorage.getItem("cart"));
+    }
+    refreshCartDisplay(); //Show cart items in the HTML after loading from local storage
+  };
+  initCartItem();
 };
 export default cart;

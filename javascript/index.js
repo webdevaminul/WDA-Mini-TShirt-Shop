@@ -1,6 +1,6 @@
-import cart from "./cart.js";
-import products from "./products.js";
-import { loadHTML } from "./utilities.js";
+import cart from "../javascript/cart.js";
+import products from "../javascript/products.js";
+import { loadHTML } from "../javascript/utilities.js";
 
 const app = document.getElementById("app");
 const temporatyContent = document.getElementById("temporatyContent");
@@ -22,7 +22,9 @@ const initApp = () => {
     const productElement = document.createElement("div"); //Create product element
     productElement.classList.add("product");
     productElement.innerHTML = `
-      <img src="${product.image}"/>
+      <a href="/detail.html?id=${product.id}">
+        <img src="${product.image}"/>
+      </a>
       <h2>${product.name}</h2>
       <p>$${product.price}</p>
       <button class="addCart" data-id="${product.id}">Add to Cart</button> 

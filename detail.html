@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Product Details</title>
+  </head>
+  <body>
+    <header id="app">
+      <!-- Here I am loading template.html-->
+    </header>
+
+    <main id="temporaryContent">
+      <!-- Product Details -->
+      <section class="detailsContainer">
+        <figure class="image">
+          <img src="/assets/product(1).png" alt="Product Image" />
+        </figure>
+        <div class="detailsContent">
+          <h1 class="detailTitle">Name</h1>
+          <div class="detailPrice">$10</div>
+          <div class="detailBtns">
+            <button>Check Out</button>
+            <button class="addCart">
+              Add to Cart
+              <svg
+                class="w-6 h-6 text-white dark:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis facere voluptatem
+            repellendus deleniti architecto voluptates consequatur. Velit, dolorum. Excepturi
+            repellendus debitis voluptatibus! Assumenda quibusdam quod a harum ea eligendi odio!
+          </div>
+        </div>
+      </section>
+
+      <!-- Similar Products -->
+      <section class="productsContainer"></section>
+    </main>
+
+    <script type="module" src="/javascript/detail.js"></script>
+  </body>
+</html>

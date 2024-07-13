@@ -27,6 +27,9 @@ const cart = () => {
         //Product already in cart, update quantity
         cartItems[productIndex].quantity = productQuantity;
       }
+    } else {
+      // Product quantity is 0, remove from cart
+      cartItems.splice(productIndex, 1);
     }
     refreshCartDisplay();
   };
@@ -38,9 +41,11 @@ const cart = () => {
     const productIndex = cartItems.findIndex((item) => item.product_id === productId); //From cart array, checks if its product_id matches the productId.
     let productQuantity = productIndex < 0 ? 0 : cartItems[productIndex].quantity;
 
-    if (clickedElement.classList.contains("addCart")) {
+    if (clickedElement.classList.contains("addCart") || clickedElement.classList.contains("plus")) {
       productQuantity++;
-      console.log(productQuantity, cartItems);
+      updateCartItem(productId, productIndex, productQuantity);
+    } else if (clickedElement.classList.contains("minus")) {
+      productQuantity--;
       updateCartItem(productId, productIndex, productQuantity);
     }
   });
@@ -69,9 +74,9 @@ const cart = () => {
       <p class="cartItemName">${info.name}</p>
       <p class="totalPrice">${parseFloat(info.price * item.quantity).toFixed(2)}</p>
       <div>
-        <span class="minus">-</span>
+        <span class="minus" data-id=${info.id}>-</span>
         <span>${item.quantity}</span>
-        <span class="plus">+</span>
+        <span class="plus" data-id=${info.id}>+</span>
       </div>
       `;
       cartContainer.appendChild(cartPorduct);

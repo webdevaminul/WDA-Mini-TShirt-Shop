@@ -84,7 +84,7 @@ nav .title {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-column: 1 / -1;
-  padding-top: 80px;
+  padding-top: 90px;
 }
 .mainWraper section {
   grid-column: 1 / -1;
@@ -225,10 +225,16 @@ body.activeCart .cartContent {
 /*------------------------------ 
     Detail | Product Details 
 ------------------------------*/
-.detailsContainer {
+.detailsWraper {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 50px;
+  grid-template-columns: repeat(12, 1fr);
+  padding: 10px;
+}
+.detailsContainer {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 30px;
   text-align: left;
   margin-bottom: 30px;
 }
@@ -237,6 +243,10 @@ body.activeCart .cartContent {
 }
 .image {
   position: relative;
+  grid-column: span 12;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .image::before {
   position: absolute;
@@ -248,6 +258,10 @@ body.activeCart .cartContent {
   background-color: #94817733;
   z-index: -1;
   border-radius: 190px 80px 180px 160px;
+}
+.detailsContent {
+  grid-column: span 12;
+  border: 1px solid green;
 }
 .detailTitle {
   font-size: xx-large;
@@ -287,7 +301,7 @@ body.activeCart .cartContent {
 .detailBtns button svg {
   transform: translateY(-2px);
 }
-.detail .description {
+.detailsContainer .description {
   font-weight: 300;
   margin-top: 20px;
 }
@@ -301,6 +315,7 @@ body.activeCart .cartContent {
     right: -360px;
   }
 }
+
 @media (min-width: 600px) {
   .productsContainer {
     gap: 30px;
@@ -308,7 +323,14 @@ body.activeCart .cartContent {
   .product {
     grid-column: span 4;
   }
+  .image {
+    grid-column: span 7;
+  }
+  .detailsContent {
+    grid-column: span 5;
+  }
 }
+
 @media (min-width: 769px) {
   .cartContent {
     width: 400px;
@@ -323,9 +345,29 @@ body.activeCart .cartContent {
   .product h2 {
     font-size: 20px;
   }
+  .detailsContainer {
+    grid-column: 2 / -2;
+  }
+  .image {
+    grid-column: span 6;
+  }
+  .detailsContent {
+    grid-column: span 6;
+  }
 }
+
 @media (min-width: 1025px) {
   .product {
     grid-column: span 3;
+  }
+  .image img {
+    width: 90%;
+  }
+  .image::before {
+    inset: 0;
+    margin: auto;
+    left: calc(50% - 190px);
+    right: 100px;
+    top: 30px;
   }
 }

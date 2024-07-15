@@ -3,7 +3,7 @@ import products from "../javascript/products.js";
 import { loadHTML } from "../javascript/utilities.js";
 
 const app = document.getElementById("app");
-const temporaryContent = document.querySelector(".temporaryContent");
+const temporaryContent = document.getElementById("temporaryContent");
 
 loadHTML("template.html", app).then(() => {
   const mainContent = document.getElementById("mainContent");
@@ -12,3 +12,11 @@ loadHTML("template.html", app).then(() => {
   cart(); //Run cart functionality in Index Page
   initApp(); //Run product list functionality in Index Page
 });
+
+const initApp = () => {
+  const paramsID = new URLSearchParams(window.location.search).get("id");
+  const info = products.filter((product) => product.id == paramsID)[0];
+  if (!info) {
+    window.location.href = "/";
+  }
+};

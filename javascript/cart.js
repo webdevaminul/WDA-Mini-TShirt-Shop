@@ -1,7 +1,7 @@
 import products from "../javascript/products.js";
 
 const cart = () => {
-  //DOM Elements
+  // DOM Elements
   const bodyElement = document.querySelector("body");
   const cartIconElement = document.querySelector(".cartIcon");
   const closeCartButton = document.querySelector(".cartBtns .cartClose");
@@ -14,7 +14,7 @@ const cart = () => {
   cartIconElement.addEventListener("click", toggleCartVisibility);
   closeCartButton.addEventListener("click", toggleCartVisibility);
 
-  //Refresh cart items in the HTML
+  // Refresh cart items in the HTML
   const refreshCartDisplay = () => {
     const cartContainer = document.querySelector(".cartContainer");
     const HTMLforTotal = document.querySelector(".cartIcon span");
@@ -23,17 +23,22 @@ const cart = () => {
     // Clear cart container before adding new product
     cartContainer.innerHTML = null;
 
-    //Calculate and Show total quantity
+    // Calculate and Show total quantity
     cartItems.forEach((item) => {
-      totalQuantity = totalQuantity + item.quantity;
+      totalQuantity += item.quantity; //same as totalQuantity = totalQuantity + item.quantity
 
-      //By card's product_id Get all the info from Products.js
+      // By card's product_id Get all the info from Products.js
       const productIndex = products.findIndex((value) => item.product_id == value.id);
+      // If product is not found, log a warning and skip to the next item
+      if (productIndex === -1) {
+        console.warn(`Product with id ${item.product_id} not found in products list.`);
+        return;
+      }
       const info = products[productIndex];
 
-      const cartPorduct = document.createElement("div");
-      cartPorduct.classList.add("cartProduct");
-      cartPorduct.innerHTML = `
+      const cartProduct = document.createElement("div");
+      cartProduct.classList.add("cartProduct");
+      cartProduct.innerHTML = `
       <img src="${info.image}"/>
       <p class="cartItemName">${info.name}</p>
       <p class="totalPrice">$${parseFloat(info.price * item.quantity).toFixed(2)}</p>
@@ -43,7 +48,7 @@ const cart = () => {
         <span class="plus" data-id=${info.id}>+</span>
       </div>
       `;
-      cartContainer.appendChild(cartPorduct);
+      cartContainer.appendChild(cartProduct);
     });
     HTMLforTotal.innerText = totalQuantity;
   };
@@ -52,13 +57,13 @@ const cart = () => {
   const updateCartItem = (productId, productIndex, productQuantity) => {
     if (productQuantity > 0) {
       if (productIndex < 0) {
-        //Product not in cart, add new item
+        // Product not in cart, add new item
         cartItems.push({
           product_id: productId,
           quantity: productQuantity,
         });
       } else {
-        //Product already in cart, update quantity
+        // Product already in cart, update quantity
         cartItems[productIndex].quantity = productQuantity;
       }
     } else {
@@ -73,8 +78,8 @@ const cart = () => {
   // Event listener for adding product to cart
   document.addEventListener("click", (event) => {
     const clickedElement = event.target;
-    const productId = clickedElement.dataset.id; //Accessing id of the product via dataset
-    const productIndex = cartItems.findIndex((item) => item.product_id === productId); //From cart array, checks if its product_id matches the productId.
+    const productId = clickedElement.dataset.id; // Accessing id of the product via dataset
+    const productIndex = cartItems.findIndex((item) => item.product_id === productId); // From cart array, checks if its product_id matches the productId.
     let productQuantity = productIndex < 0 ? 0 : cartItems[productIndex].quantity;
 
     if (clickedElement.classList.contains("addCart") || clickedElement.classList.contains("plus")) {
@@ -86,13 +91,14 @@ const cart = () => {
     }
   });
 
-  //Load cart items from local storage
+  // Load cart items from local storage
   const initCartItem = () => {
     if (localStorage.getItem("cart")) {
       cartItems = JSON.parse(localStorage.getItem("cart"));
     }
-    refreshCartDisplay(); //Show cart items in the HTML after loading from local storage
+    refreshCartDisplay(); // Show cart items in the HTML after loading from local storage
   };
   initCartItem();
 };
+
 export default cart;

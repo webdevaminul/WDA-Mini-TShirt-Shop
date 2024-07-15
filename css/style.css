@@ -86,7 +86,7 @@ nav .title {
   grid-column: 1 / -1;
   padding-top: 90px;
 }
-.mainWraper section {
+.mainWraper .productsContainer {
   grid-column: 1 / -1;
   padding: 10px;
 }
@@ -226,6 +226,7 @@ body.activeCart .cartContent {
     Detail | Product Details 
 ------------------------------*/
 .detailsWraper {
+  grid-column: 1 / -1;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   padding: 10px;
@@ -339,13 +340,13 @@ body.activeCart .cartContent {
   nav {
     grid-column: 2 / -2;
   }
-  .mainWraper section {
+  .mainWraper .productsContainer {
     grid-column: 2 / -2;
   }
   .product h2 {
     font-size: 20px;
   }
-  .detailsContainer {
+  .detailsWraper {
     grid-column: 2 / -2;
   }
   .image {

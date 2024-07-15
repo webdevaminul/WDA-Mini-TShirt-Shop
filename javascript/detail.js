@@ -19,4 +19,11 @@ const initApp = () => {
   if (!info) {
     window.location.href = "/";
   }
+
+  const detailsContainer = document.querySelector(".detailsContainer");
+  detailsContainer.querySelector(".image img").src = info.image;
+  detailsContainer.querySelector(".detailTitle").innerText = info.name;
+  detailsContainer.querySelector(".detailPrice").innerText = info.price;
+  detailsContainer.querySelector(".description").innerText = info.description;
+  detailsContainer.querySelector(".addCart").dataset.id = info.id;
 };

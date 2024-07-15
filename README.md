@@ -46,10 +46,12 @@ To run this project locally, follow these steps:
 5. **Run the Live Server**:
    Right-click on `index.html` and select `Open with Live Server`.
 
-   ## Important
+## Important
 
-   Ensure you have the Live Server extension installed in Visual Studio Code to run the project smoothly in a local development environment.
+Ensure you have the Live Server extension installed in Visual Studio Code to run the project smoothly in a local development environment.
 
-   Feel free to contribute to this project by submitting issues or pull requests. Your feedback and contributions are welcome!
-   For any questions or inquiries, please contact [webdev.aminul@gmail.com].
-   Happy coding
+## Creadit & Contributions
+
+Contributions are welcome! Please fork the repository and submit a pull request for any feature additions or bug fixes.  
+For any questions or inquiries, please contact [webdev.aminul@gmail.com].  
+Happy coding

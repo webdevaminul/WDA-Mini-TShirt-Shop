@@ -86,10 +86,6 @@ nav .title {
   grid-column: 1 / -1;
   padding-top: 90px;
 }
-.mainWraper .productsContainer {
-  grid-column: 1 / -1;
-  padding: 10px;
-}
 
 /*------------------------------ 
     Template | Shopping Cart 
@@ -186,7 +182,7 @@ body.activeCart .cartContent {
   grid-template-columns: repeat(12, 1fr);
   grid-column: 1 / -1;
   gap: 20px;
-  width: 100%;
+  padding: 10px;
 }
 .product {
   grid-column: span 6;
@@ -225,17 +221,11 @@ body.activeCart .cartContent {
 /*------------------------------ 
     Detail | Product Details 
 ------------------------------*/
-.detailsWraper {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  padding: 10px;
-}
 .detailsContainer {
   grid-column: 1/-1;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 30px;
+  gap: 10px;
   text-align: left;
   margin-bottom: 30px;
 }
@@ -262,15 +252,16 @@ body.activeCart .cartContent {
 }
 .detailsContent {
   grid-column: span 12;
-  border: 1px solid green;
+  padding: 10px;
 }
 .detailTitle {
-  font-size: xx-large;
-  padding: 40px 0 0 0;
+  font-size: 24px;
+  font-weight: 500;
+  padding: 0;
   margin: 0 0 10px 0;
 }
 .detailPrice {
-  font-weight: bold;
+  font-weight: 500;
   font-size: x-large;
   letter-spacing: 4px;
   margin-bottom: 20px;
@@ -290,14 +281,10 @@ body.activeCart .cartContent {
   align-items: center;
   justify-content: center;
 }
-/* .detailsContainer svg {
-  width: 18px;
-} */
 .detailBtns button:nth-child(2) {
   background-color: #2f2f2f;
   color: #eee;
-  display: inline-flex;
-  gap: 10px;
+  font-weight: 400;
 }
 .detailBtns button svg {
   transform: translateY(-2px);
@@ -305,6 +292,17 @@ body.activeCart .cartContent {
 .detailsContainer .description {
   font-weight: 300;
   margin-top: 20px;
+}
+
+/*------------------------------ 
+    Detail | Product Details 
+------------------------------*/
+.titleSimilar {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+  padding-top: 20px;
 }
 
 /*------------------------------ 
@@ -330,6 +328,9 @@ body.activeCart .cartContent {
   .detailsContent {
     grid-column: span 5;
   }
+  .detailTitle {
+    padding: 40px 0 0 0;
+  }
 }
 
 @media (min-width: 769px) {
@@ -343,11 +344,13 @@ body.activeCart .cartContent {
   .mainWraper .productsContainer {
     grid-column: 2 / -2;
   }
+  .mainWraper .detailsContainer {
+    grid-column: 2 / -2;
+    gap: 30px;
+  }
+
   .product h2 {
     font-size: 20px;
-  }
-  .detailsWraper {
-    grid-column: 2 / -2;
   }
   .image {
     grid-column: span 6;

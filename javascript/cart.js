@@ -1,4 +1,4 @@
-import products from "../javascript/products.js";
+import products from "./products.js";
 
 const cart = () => {
   // DOM Elements

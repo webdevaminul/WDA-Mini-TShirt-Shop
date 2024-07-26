@@ -1,16 +1,18 @@
-import cart from "../javascript/cart.js";
-import products from "../javascript/products.js";
-import { loadHTML } from "../javascript/utilities.js";
+import cart from "./cart.js";
+import products from "./products.js";
+import { loadHTML } from "./utilities.js";
+import { themeSwitcher } from "./darkmode.js";
 
 const app = document.getElementById("app");
 const temporaryContent = document.getElementById("temporaryContent");
 
 loadHTML("template.html", app).then(() => {
   const mainContent = document.getElementById("mainContent");
-  mainContent.innerHTML = temporaryContent.innerHTML; // Load index.html main to template.html main
+  mainContent.innerHTML = temporaryContent.innerHTML; // Load detail.html main to template.html main
   temporaryContent.innerHTML = null; // Delete temporary content to stop showing 2 content
-  cart(); // Run cart functionality in Index Page
-  initApp(); // Run product list functionality in Index Page
+  cart(); // Run cart functionality in detail Page
+  initApp(); // Run product list functionality in detail Page
+  themeSwitcher(); // Initialize dark mode switcher functionality in detail Page
 });
 
 const initApp = () => {

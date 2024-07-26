@@ -16,7 +16,8 @@ This is a simple e-commerce application built using vanilla JavaScript, HTML, an
 - **Product Listing Page:** Display all available products with images, names, and prices.
 - **Product Detail Page:** Detailed view of a selected product with an option to add it to the cart.
 - **Shopping Cart:** Add, update, and remove products from the cart. The cart is persisted using local storage.
-- **Local Storage:** Cart items are saved in local storage to maintain state between sessions.
+- **Dark Mode:** User can switch theme between dark and light mode.
+- **Local Storage:** Cart items and theme are saved in local storage to maintain state between sessions.
 
 ## Setup and Running the Project
 

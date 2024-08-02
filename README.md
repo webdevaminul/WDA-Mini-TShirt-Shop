@@ -1,4 +1,9 @@
-# [T-Shirt Shop](https://t-shirt-shop-beta.vercel.app)
+# [WDA-Mini-TShirt-Shop](https://wda-mini-tshirt-shop.vercel.app)
+
+## Demo
+
+![WDA-Mini-TShirt-Shop-Demo-1](/assets/demo/demo-img-1.png)
+![WDA-Mini-TShirt-Shop-Demo-2](/assets/demo/demo-img-2.png)
 
 ## Overview
 

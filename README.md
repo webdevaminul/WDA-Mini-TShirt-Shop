@@ -31,13 +31,13 @@ To run this project locally, follow these steps:
 1. **Clone the Repository**:
 
    ```bash
-   git clone https://github.com/webdevaminul/T-Shirt-Shop.git
+   git clone https://github.com/webdevaminul/WDA-Mini-TShirt-Shop.git
    ```
 
 2. **Navigate to the Project Directory**:
 
    ```bash
-   cd T-Shirt-Shop
+   cd WDA-Mini-TShirt-Shop
    ```
 
 3. **Open the project with Visual Studio Code (recommended)**:

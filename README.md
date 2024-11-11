@@ -1,4 +1,4 @@
-<a href="https://wda-mini-tshirt-shop.vercel.app" target="_blank" style="font-size: 20px;">WDA-Mini-TShirt-Shop</a>
+# [WDA-Mini-TShirt-Shop](https://wda-mini-tshirt-shop.vercel.app){:target="_blank"}
 
 ## Demo
 
